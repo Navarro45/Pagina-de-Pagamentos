@@ -1,19 +1,16 @@
+
 import NavBar from '../Componentes/NavBar';
-import DivBase from "../Componentes/DivBase";
 import Footer from "../Componentes/Footer";
 import '../index.css'
 
 
-function Listagem() {
+function Crud() {
 
     return (
         <div className="App">
             <header className="App-header">
-                <NavBar PageName="Listagem Dos Pagamentos"/>
+                <NavBar PageName="Crud do Pagamento"/>
             </header>
-            <DivBase>
-
-            </DivBase>
 
             <Footer></Footer>
 
@@ -22,4 +19,4 @@ function Listagem() {
 
 }
 
-export default Listagem;
+export default Crud;

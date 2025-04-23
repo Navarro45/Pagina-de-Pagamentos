@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import "./index.css";
 
-function NavBar() {
+function NavBar(props) {
     return (
         <header className="Nav-Bar">
             <div className="Nav-Bar">
@@ -12,12 +12,12 @@ function NavBar() {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/Listagem">Listagem</Link></li>
-                            <li><Link to="/Novo">Novo</Link></li>
+                            <li><Link to="/Crud">Crud</Link></li>
                         </ul>
                     </div>
                 </div>
                 <div className="Nav-bar-center">
-                    <h2>Listagem de Pagamentos</h2>
+                    <h2>{props.PageName}</h2>
                 </div>
             </div>
         </header>

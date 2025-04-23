@@ -1,21 +1,22 @@
-import '../index.css'
-import NavBar from "../Componentes/NavBar";
-import Footer from "../Componentes/Footer";
+import NavBar from '../Componentes/NavBar';
 import DivBase from "../Componentes/DivBase";
+import Footer from "../Componentes/Footer";
+import '../index.css'
+
 
 function HomePage() {
 
     return (
         <div className="App">
-            <header className="app-header">
-                <NavBar />
+            <header className="App-header">
+                <NavBar PageName="Pagina Inicial"/>
             </header>
-            <DivBase></DivBase>
 
             <Footer></Footer>
-        </div>
 
-    );
+        </div>
+    )
+
 }
 
 export default HomePage;
