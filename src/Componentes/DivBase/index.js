@@ -14,7 +14,6 @@ function DivBase(children) {
     const [cpfUpdate, setCpfUpdate] = useState("");
     const [nomeUpdate, setNomeUpdate] = useState("");
 
-    // Função para carregar os pagamentos
     const fetchPagamentos = () => {
         axios.get("http://localhost:8800/pagamentos")
             .then(response => setData(response.data))
@@ -25,7 +24,6 @@ function DivBase(children) {
         fetchPagamentos();
     }, []);
 
-// Função para criar um novo pagamento
     const createPagamento = () => {
         axios.post("http://localhost:8800/pagamentos", {
             numCartao,
@@ -46,7 +44,6 @@ function DivBase(children) {
             .catch(error => console.error("Erro ao criar pagamento:", error));
     };
 
-// Função para atualizar um pagamento pelo ID
     const updatePagamento = (id) => {
         axios.put(`http://localhost:8800/pagamentos/${id}`, {
             numCartao,
@@ -67,7 +64,6 @@ function DivBase(children) {
             .catch(error => console.error("Erro ao atualizar pagamento:", error));
     };
 
-// Função para deletar um pagamento pelo ID
     const deletePagamento = (idPagamento) => {
         axios.delete(`http://localhost:8800/pagamentos/${idPagamento}`)
             .then(() => {
@@ -79,17 +75,14 @@ function DivBase(children) {
 
     return (
         <div className="div-base">
-
             <ul className="list">
                 <li>Numero do Cartão - Valor  - Categoria  </li>
                 {Array.isArray(data) && data.map((pagamento) => (
                     <li key={pagamento.idPagamento}>
-                        {pagamento.numCartao} - {pagamento.Valor}  - {pagamento.categoria}
-                        <button >Vizualizar(falta fazer)</button>
+                        {pagamento.numCartao} - R${pagamento.Valor}  - {pagamento.categoria}
                     </li>
                 ))}
             </ul>
-
         </div>
     );
 }

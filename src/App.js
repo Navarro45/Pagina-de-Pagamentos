@@ -1,29 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from "./Componentes/NavBar";
-import Footer from "./Componentes/Footer";
-import DivBase from "./Componentes/DivBase";
-import {useState, useEffect} from "react";
-import axios from 'axios';
-
+import HomePage from "./paginas/Home";
+import Listagem from "./paginas/Listagem";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
-
-
-
     return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      <DivBase>
+    <Router>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/Listagem" element={<Listagem />} />
+        </Routes>
 
-      </DivBase>
+    </Router>
 
-      <Footer></Footer>
-
-    </div>
   );
 }
 
