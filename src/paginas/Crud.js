@@ -1,7 +1,6 @@
 
 import NavBar from '../Componentes/NavBar';
 import Footer from "../Componentes/Footer";
-import '../index.css'
 
 
 function Crud() {

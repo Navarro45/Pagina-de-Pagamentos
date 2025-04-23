@@ -1,11 +1,13 @@
 import "./index.css"
-import App from "../../App";
 
 function Footer() {
 
     return(
         <footer className="App-footer">
-            <h1>Pedro Henrique Vargas Navarro</h1>
+            <h1>
+                Email: phvnavarro@gmail.com<br></br>
+                Telefone: 47 99106-6557
+            </h1>
         </footer>
     )
 }

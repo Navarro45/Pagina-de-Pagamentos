@@ -1,7 +1,5 @@
 import NavBar from '../Componentes/NavBar';
-import DivBase from "../Componentes/DivBase";
 import Footer from "../Componentes/Footer";
-import '../index.css'
 
 
 function HomePage() {
@@ -11,6 +9,11 @@ function HomePage() {
             <header className="App-header">
                 <NavBar PageName="Pagina Inicial"/>
             </header>
+            <div>
+                <p className="Texto de Apresentação">
+                    Trabalho Realisado pelo Aluno Pedro Henrique Vargas Navarro
+                </p>
+            </div>
 
             <Footer></Footer>
 
