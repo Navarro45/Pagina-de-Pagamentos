@@ -19,8 +19,8 @@ function DivBase() {
     }, []);
 
     const vizualizarPagamento = (pagamento) =>{
-
-        navigate("/Vizualizar", {state: {pagamento}});
+        console.log("ID selecionado:", pagamento.idPagamentos);
+        navigate(`/Vizualizar/${pagamento.idPagamentos}`);
     }
 
     return (
@@ -28,9 +28,9 @@ function DivBase() {
             <ul className="list">
                 <li className="list-guia">Numero do Cartão - Valor  - Categoria  </li>
                 {Array.isArray(data) && data.map((pagamento) => (
-                    <li key={pagamento.idPagamento}>
+                    <li key={pagamento.idPagamentos}>
                         {pagamento.numCartao} - R${pagamento.Valor}  - {pagamento.categoria}
-                        <button className="button" onClick={() => vizualizarPagamento(data)}> Ver Detalhes</button>
+                        <button className="button" onClick={() => vizualizarPagamento(pagamento)}> Ver Detalhes</button>
                     </li>
 
                 ))}
