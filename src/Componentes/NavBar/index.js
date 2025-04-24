@@ -10,9 +10,9 @@ function NavBar(props) {
                     Menu
                     <div className="dropdown">
                         <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/Listagem">Listagem</Link></li>
-                            <li><Link to="/Crud">Crud</Link></li>
+                            <li><Link to="/">Listagem</Link></li>
+                            <li><Link to="/Vizualizar">Alterar Pagamento</Link></li>
+                            <li><Link to="/Criar">Novo Pagamento</Link></li>
                         </ul>
                     </div>
                 </div>
