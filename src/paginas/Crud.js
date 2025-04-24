@@ -9,8 +9,7 @@ function Crud() {
 
     const [data, setData] = useState([]);
     const [numCartao, setNumCartao] = useState("");
-    const [valor, setValor] = useState("");
-    const [dataHora, setDataHora] = useState("");
+    const [Valor, setValor] = useState("");
     const [destinatario, setDestinatario] = useState("");
     const [categoria, setCategoria] = useState("");
 
@@ -26,65 +25,37 @@ function Crud() {
 
 
     const createPagamento = () => {
+
+
         axios.post("http://localhost:8800/pagamentos", {
             numCartao,
-            valor,
-            data_hora_pagamento: dataHora,
+            Valor,
             destinatario,
             categoria
         })
             .then(() => {
                 alert("Pagamento criado com sucesso!");
-                fetchPagamentos();
                 setNumCartao("");
                 setValor("");
-                setDataHora("");
                 setDestinatario("");
                 setCategoria("");
             })
             .catch(error => console.error("Erro ao criar pagamento:", error));
     };
 
-    const updatePagamento = (id) => {
-        axios.put(`http://localhost:8800/pagamentos/${id}`, {
-            numCartao,
-            valor,
-            data_hora_pagamento: dataHora,
-            destinatario,
-            categoria
-        })
-            .then(() => {
-                alert("Pagamento atualizado com sucesso!");
-                fetchPagamentos();
-                setNumCartao("");
-                setValor("");
-                setDataHora("");
-                setDestinatario("");
-                setCategoria("");
-            })
-            .catch(error => console.error("Erro ao atualizar pagamento:", error));
-    };
 
-    const deletePagamento = (idPagamento) => {
-        axios.delete(`http://localhost:8800/pagamentos/${idPagamento}`)
-            .then(() => {
-                alert("Pagamento apagado com sucesso!");
-                fetchPagamentos();
-            })
-            .catch(error => console.error("Erro ao apagar pagamento:", error));
-    };
 
     return (
         <div className="App">
             <header className="App-header">
-                <NavBar PageName="Crud do Pagamento"/>
+                <NavBar PageName="Adicionar Novo Pagamento"/>
             </header>
             <div className="crud">
-                <input placeholder="Numero do Cartão"></input>
-                <input placeholder="Valor"></input>
-                <input placeholder="Destinatário"></input>
-                <button onClick={createPagamento()} type="button">Novo Pagamento</button>
-
+                <input type="number" value={numCartao} onChange={(e) => setNumCartao(e.target.value)} placeholder="Número do Cartão"></input>
+                <input type="number" value={Valor} onChange={(e) => setValor(e.target.value)} placeholder="Valor"></input>
+                <input type="text" value={destinatario} onChange={(e) => setDestinatario(e.target.value)} placeholder="Destinatário"></input>
+                <input type="text" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoria"></input>
+                <button onClick={createPagamento} type="button">Novo Pagamento</button>
             </div>
             <Footer></Footer>
 

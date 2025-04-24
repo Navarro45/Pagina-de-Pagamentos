@@ -11,7 +11,6 @@ function NavBar(props) {
                     <div className="dropdown">
                         <ul>
                             <li><Link to="/">Listagem</Link></li>
-                            <li><Link to="/Vizualizar">Alterar Pagamento</Link></li>
                             <li><Link to="/Criar">Novo Pagamento</Link></li>
                         </ul>
                     </div>
