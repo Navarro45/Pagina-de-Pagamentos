@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lightgray;
 }
 
 .App-header {
@@ -22,6 +23,11 @@
   height: 100%;
   width: 100%;
   margin-left: 20%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.list:hover{
+  scrollbar-width: thin;
 }
 
 .list li{
@@ -30,6 +36,7 @@
   background: whitesmoke;
   padding: 30px;
   border-radius: 18px;
+
 }
 
 .list button{

@@ -22,7 +22,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #61dafb;
+    background-color: dimgray;
     min-width: 200px;
     z-index: 1000;
     padding: 10px 0;
@@ -45,7 +45,7 @@
 
 
 .Nav-bar-menu .dropdown a:hover {
-    background-color: #4ec3e0;
+    background-color: darkgray;
 }
 
 .Nav-bar-menu:hover .dropdown {

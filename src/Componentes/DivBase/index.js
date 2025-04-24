@@ -76,7 +76,7 @@ function DivBase(children) {
     return (
         <div className="div-base">
             <ul className="list">
-                <li>Numero do Cartão - Valor  - Categoria  </li>
+                <li className="list-guia">Numero do Cartão - Valor  - Categoria  </li>
                 {Array.isArray(data) && data.map((pagamento) => (
                     <li key={pagamento.idPagamento}>
                         {pagamento.numCartao} - R${pagamento.Valor}  - {pagamento.categoria}
