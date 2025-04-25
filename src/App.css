@@ -56,11 +56,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 600px;
-  max-height: 300px;
-  width: 100%;
+  max-width: 500px;
+  max-height: 600px;
   border-radius: 10px;
+  background-color: darkgrey;
+  margin: 8%;
+  margin-left: 35%;
 
+}
+
+.card button{
+  height: 50px;
+  width: 120px;
+  margin: 20px;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card input{
+  height: 30px;
+  width: 180px;
+  margin: 10px;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .hidden {

@@ -78,7 +78,7 @@ function HomePage() {
 
                 {/* Modo de edição */}
                 <div className={editando ? 'visible' : 'hidden'}>
-                    <p><strong>Número do Cartão:</strong>{dados.numCartao}</p>
+                    <p><strong>Número do Cartão:</strong> {dados.numCartao}</p>
                     <p><strong>Número do Cartão:</strong> <input type="number" value={numCartao} onChange={(e) => setNumCartao(e.target.value)} placeholder="Número do Cartão"></input></p>
                     <p><strong>Valor:</strong> R$ {dados.Valor}</p>
                     <p><strong>Valor:</strong> <input type="number" value={Valor} onChange={(e) => setValor(e.target.value)} placeholder="Valor"></input></p>
