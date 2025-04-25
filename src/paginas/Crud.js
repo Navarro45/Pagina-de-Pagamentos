@@ -48,6 +48,7 @@ function Crud() {
                 <NavBar PageName="Adicionar Novo Pagamento"/>
             </header>
             <div className="crud">
+                <h2>Novo Pagamento</h2>
                 <input type="number" value={numCartao} onChange={(e) => setNumCartao(e.target.value)} placeholder="Número do Cartão"></input>
                 <input type="number" value={Valor} onChange={(e) => setValor(e.target.value)} placeholder="Valor"></input>
                 <input type="text" value={destinatario} onChange={(e) => setDestinatario(e.target.value)} placeholder="Destinatário"></input>

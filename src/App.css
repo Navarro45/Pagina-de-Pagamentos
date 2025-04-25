@@ -20,20 +20,35 @@
   color: #61dafb;
 }
 
+.crud{
+  width: 30%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 12%;
+  border-radius: 10px;
+  margin-left: 35%;
+  background-color: darkgrey;
+}
+
 .crud button{
-  height: 30px;
-  width: 80px;
-  margin-left: 20px;
+  height: 50px;
+  width: 120px;
+  margin: 20px;
   color: black;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .crud input{
   height: 30px;
   width: 180px;
-  margin-left: 20px;
+  margin: 10px;
   color: black;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .card{
