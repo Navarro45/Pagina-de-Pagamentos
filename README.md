@@ -1,5 +1,7 @@
 #Como utilizar o projeto:
 
+Antes de tudo faça o download do arquivo ZIP, ao extrair será possível ver os arquivos pertencentes ao código tanto do baxk-end quanto do front-end.
+
 1- Importe o código completo através do Github para um repositório local.
 
 2- Certifique-se de criar o banco de dados corretamente usando o script sql anexado neste repositório.
