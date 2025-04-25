@@ -20,10 +20,7 @@ function HomePage() {
 
     useEffect(() => {
         axios.get(`http://localhost:8800/pagamentos/${idPagamentos}`)
-            .then((res) =>{
-                console.log("Resposta do backend:", res.data);
-                setDados(res.data);
-            })
+            .then((res) => setDados(res.data))
             .catch((err) => console.error("Erro ao buscar detalhes:", err));
     }, [idPagamentos]);
 

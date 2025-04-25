@@ -20,7 +20,6 @@ function DivBase() {
     }, []);
 
     const vizualizarPagamento = (pagamento) =>{
-        console.log("ID selecionado:", pagamento.idPagamentos);
         navigate(`/Vizualizar/${pagamento.idPagamentos}`);
     }
 
