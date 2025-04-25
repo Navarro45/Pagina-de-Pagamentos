@@ -9,3 +9,6 @@
 4- Em outra aba do command prompt ou um terminal acesse o diretório do back-end e acesse o diretório com o nome de api e então repita os comandos feitos anteriormente para o front-end.
 
 5- acesse o arquivo db.js no back-end e garanta que todas as informações para a conexão do banco de dados estejam corretas de acordo com as suas.
+
+Link do youtube para a apresentação em video do código funcionando e de sua estrutura:
+https://youtu.be/ZJZVqE2co1o
