@@ -18,14 +18,11 @@ function Crud() {
             .then(response => setData(response.data))
             .catch(error => console.error("Erro ao buscar dados:", error));
     };
-
     useEffect(() => {
         fetchPagamentos();
     }, []);
 
-
     const createPagamento = () => {
-
 
         axios.post("http://localhost:8800/pagamentos", {
             numCartao,

@@ -10,6 +10,13 @@ function HomePage() {
     const { idPagamentos } = useParams();
     const [dados, setDados] = useState(null);
     const navigate = useNavigate();
+    const [editando, setEditando] = useState(false);
+    const [numCartao, setNumCartao] = useState("");
+    const [Valor, setValor] = useState("");
+    const [destinatario, setDestinatario] = useState("");
+    const [categoria, setCategoria] = useState("");
+    const [data_hora_pagamento, setData_hora_pagamento] = useState("");
+
 
     useEffect(() => {
         axios.get(`http://localhost:8800/pagamentos/${idPagamentos}`)
@@ -31,14 +38,26 @@ function HomePage() {
         navigate(`/`);
     }
 
-    const alterarDados = () => {
-
-
-    }
+    const salvar = () => {
+        axios.put(`http://localhost:8800/pagamentos/${idPagamentos}`, {
+            numCartao,
+            Valor: Valor,
+            destinatario,
+            categoria
+        })
+            .then(() => {
+                alert('Atualizado com sucesso!');
+                setEditando(false);
+                setDados({ numCartao, Valor: Valor, destinatario, categoria });
+            })
+            .catch((err) => console.error('Erro ao atualizar:', err));
+    };
 
     if (!dados) {
         return <div>Carregando pagamento...</div>;
     }
+
+    const alternarEdicao = () => setEditando(!editando);
 
     return (
         <div className="App">
@@ -46,14 +65,31 @@ function HomePage() {
                 <NavBar></NavBar>
             </header>
             <div className="card">
-                <h2>Detalhes do Pagamento</h2>
-                <p><strong>Cartão:</strong> {dados.numCartao}</p>
-                <p><strong>Valor:</strong> R$ {dados.Valor}</p>
-                <p><strong>Data:</strong> {dados.data_hora_pagamento}</p>
-                <p><strong>Destinatário:</strong> {dados.destinatario}</p>
-                <p><strong>Categoria:</strong> {dados.categoria}</p>
-                <button onClick={deletar}>Deletar</button>
-                <button onClick={alterarDados}>Alterar</button>
+                {/* Modo de visualização */}
+                <div className={editando ? 'hidden' : 'visible'}>
+                    <p><strong>Cartão:</strong> {dados.numCartao}</p>
+                    <p><strong>Valor:</strong> R$ {dados.Valor}</p>
+                    <p><strong>Data:</strong> {dados.data_hora_pagamento}</p>
+                    <p><strong>Destinatário:</strong> {dados.destinatario}</p>
+                    <p><strong>Categoria:</strong> {dados.categoria}</p>
+                    <button onClick={alternarEdicao}>Editar</button>
+                    <button onClick={deletar}>Deletar</button>
+                </div>
+
+                {/* Modo de edição */}
+                <div className={editando ? 'visible' : 'hidden'}>
+                    <p><strong>Número do Cartão:</strong>{dados.numCartao}</p>
+                    <p><strong>Número do Cartão:</strong> <input type="number" value={numCartao} onChange={(e) => setNumCartao(e.target.value)} placeholder="Número do Cartão"></input></p>
+                    <p><strong>Valor:</strong> R$ {dados.Valor}</p>
+                    <p><strong>Valor:</strong> <input type="number" value={Valor} onChange={(e) => setValor(e.target.value)} placeholder="Valor"></input></p>
+                    <p><strong>Destinatário:</strong> {dados.destinatario}</p>
+                    <p><strong>Destinatário:</strong> <input type="text" value={destinatario} onChange={(e) => setDestinatario(e.target.value)} placeholder="Destinatário"></input></p>
+                    <p><strong>Categoria:</strong> {dados.categoria}</p>
+                    <p><strong>Categoria:</strong> <input type="text" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Categoria"></input></p>
+                    <button onClick={salvar}>Salvar</button>
+                    <button onClick={alternarEdicao}>Cancelar</button>
+                    <button onClick={deletar}>Deletar</button>
+                </div>
             </div>
             <Footer></Footer>
         </div>
