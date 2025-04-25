@@ -36,16 +36,19 @@ function HomePage() {
     }
 
     const salvar = () => {
-        axios.put(`http://localhost:8800/pagamentos/${idPagamentos}`, {
-            numCartao,
-            Valor: Valor,
-            destinatario,
-            categoria
-        })
+        const pagamentoAtualizado = {
+            numCartao: numCartao || dados.numCartao,
+            Valor: Valor || dados.Valor,
+            destinatario: destinatario || dados.destinatario,
+            categoria: categoria || dados.categoria,
+        };
+
+        axios.put(`http://localhost:8800/pagamentos/${idPagamentos}`, pagamentoAtualizado)
             .then(() => {
                 alert('Atualizado com sucesso!');
                 setEditando(false);
-                setDados({ numCartao, Valor: Valor, destinatario, categoria });
+                setDados(pagamentoAtualizado);
+                window.location.reload();
             })
             .catch((err) => console.error('Erro ao atualizar:', err));
     };

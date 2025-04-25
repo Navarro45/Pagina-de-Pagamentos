@@ -13,7 +13,6 @@ function App() {
             <Route path="/Vizualizar/:idPagamentos" element={<HomePage />} />
             <Route path="/Criar" element={<Crud />} />
         </Routes>
-
     </Router>
 
   );
